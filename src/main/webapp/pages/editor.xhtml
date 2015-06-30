@@ -12,7 +12,14 @@
     <h1>Helle Omid Ashouri</h1>
 
     <h:form>
-        <p:editor value="#{editor.value}" />
+        <h:panelGrid columns="2">
+        <p:outputLabel value="Your Value: " for="@next" />
+            <p:spinner id="inputSpinner" value="#{spinnerBean.s}"/>
+
+        <p:commandButton value="Enter Value" action="#{spinnerBean.convertCalc}" update="result"/>
+
+        <p:outputLabel id="result" value="#{spinnerBean.s}"/>
+    </h:panelGrid>
     </h:form>
 
 </h:body>
