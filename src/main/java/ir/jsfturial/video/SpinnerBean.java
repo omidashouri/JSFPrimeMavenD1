@@ -16,6 +16,7 @@ public class SpinnerBean implements Serializable{
     @Inject
     private Spinner spinnerii;
     private String name;
+    private String family;
 
     private int s;
 
