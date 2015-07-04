@@ -13,13 +13,27 @@
 
     <h:form>
         <h:panelGrid columns="2">
-        <p:outputLabel value="Your Value: " for="@next" />
-            <p:spinner id="inputSpinner" value="#{spinnerBean.s}"/>
+            <p:outputLabel value="Your Value: " for="@next"/>
 
-        <p:commandButton value="Enter Value" action="#{spinnerBean.convertCalc}" update="result"/>
+            <p:outputLabel for="@next" value="name:"/>
+            <p:inputText value="#{spinnerBean.name}"/>
 
-        <p:outputLabel id="result" value="#{spinnerBean.s}"/>
-    </h:panelGrid>
+            <p:outputLabel for="@next" value="family"/>
+            <p:inputText value="#{spinnerBean.family}"/>
+
+            <br/>
+
+            <p:outputLabel value="Spinner" for="@next"/>
+            <p:spinner value="#{spinnerBean.spinnerii.myValue}" >
+            <p:ajax update="result"        />
+            </p:spinner>
+
+            <br/>
+
+            <p:commandButton value="Enter Value" action="#{spinnerBean.convertCalc}" update="result"/>
+            <p:outputLabel id="result" value="#{spinnerBean.age}"/>
+
+        </h:panelGrid>
     </h:form>
 
 </h:body>

@@ -1,7 +1,8 @@
 package ir.jsfturial.video;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.RequestScoped;
+
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -17,35 +18,56 @@ public class SpinnerBean implements Serializable{
     private Spinner spinnerii;
     private String name;
     private String family;
+    private int age;
 
-    private int s;
-
-    public int getS() {
-        return s;
+    public String getName() {
+        return name;
     }
 
-    public void setS(int s) {
-        this.s = 100000;
+    public void setName(String name) {
+        this.name = name;
     }
 
-/*    public Spinner getSpinnerii() {
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public Spinner getSpinnerii() {
         return spinnerii;
     }
 
     public void setSpinnerii(Spinner spinnerii) {
         this.spinnerii = spinnerii;
-    }*/
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
 
     @PostConstruct
     public void init() {
-//        spinnerii.setMyValue(10);
-        this.setS(10);
+        this.setName("omid");
+        this.setFamily("ashouri");
 
     }
 
     public void convertCalc(){
-        this.setS(100+s);
-        System.out.println(s);
+
+        this.setAge(this.getSpinnerii().getMyValue()+1000);
+
+        System.out.println("wwwwwwwwwwwwwwwwwwwwwww wwwwwwwwwwwwwwwwwwwwwwwwww wwwwwwwwwwwwwwwwwwww");
     }
+
+
+
 
 }
