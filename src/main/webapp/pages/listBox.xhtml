@@ -23,7 +23,7 @@
                 <f:selectItems value="#{selectOneView.themes}" var="theme" itemLabel="#{theme.displayName}" itemValue="#{theme}" />
 
                 <p:column>
-                    <h:outputText value="#{t.name}" />
+                    <h:outputText styleClass="ui-theme ui-theme-#{t.name}" />
                 </p:column>
 
                 <p:column>

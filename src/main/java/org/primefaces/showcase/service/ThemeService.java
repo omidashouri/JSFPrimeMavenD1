@@ -3,7 +3,7 @@ package org.primefaces.showcase.service;
 import org.primefaces.showcase.domain.Theme;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;

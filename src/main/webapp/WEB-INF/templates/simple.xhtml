@@ -4,8 +4,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title><ui:insert name="title">#{bundle['application.defaultpage.title']}</ui:insert> </title>
+        <!--<h:link href="{request.contextPath}/css/simple.css" rel="stylesheet" type="text/css"/>-->
+    </h:head>
+    <h:body>
+        <p:layout style="width:90%;height:90%;">
+            <p:layoutUnit position="north" style="width: 30%">
+        <!--<div id="container">-->
+            <!--<div id="header">-->
+                <ui:insert name="header">
+                    <h1>#{bundle['application.defaultpage.header.content']}</h1>
+                </ui:insert>
+            <!--</div>-->
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" style="width: 60%">
+            <!--<div id="content">-->
+                <ui:insert name="content">
+                    <h1>#{bundle['application.defaultpage.body.content']}</h1>
+                </ui:insert>
+            <!--</div>-->
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south">
+            <!--<div id="footer">-->
+                <ui:insert name="footer">
+                    #{bundle['application.defaultpage.footer.content']}
+                </ui:insert>
+            <!--</div>-->
+        <!--</div>-->
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
 </html>
