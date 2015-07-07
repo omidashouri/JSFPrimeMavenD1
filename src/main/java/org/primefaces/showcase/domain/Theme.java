@@ -1,8 +1,9 @@
-package ir.primefaces.showcase.lb;
+package org.primefaces.showcase.domain;
 
 /**
- * Created by ashouri on 7/4/2015.
+ * Created by ashouri on 7/5/2015.
  */
+
 public class Theme {
 
     private int id;
@@ -45,5 +46,4 @@ public class Theme {
     public String toString() {
         return name;
     }
-
 }

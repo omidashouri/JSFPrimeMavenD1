@@ -1,9 +1,8 @@
-package ir.primefaces.showcase.service;
+package org.primefaces.showcase.service;
 
-import ir.primefaces.showcase.lb.Theme;
+import org.primefaces.showcase.domain.Theme;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.inject.Model;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -11,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ashouri on 7/4/2015.
+ * Created by ashouri on 7/5/2015.
  */
-
-@Model
-public class ThemeService implements Serializable {
+@Named
+@ApplicationScoped
+public class ThemeService implements Serializable{
 
     private List<Theme> themes;
 
@@ -65,5 +64,4 @@ public class ThemeService implements Serializable {
     public List<Theme> getThemes() {
         return themes;
     }
-
 }

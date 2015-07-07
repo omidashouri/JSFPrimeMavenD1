@@ -1,7 +1,7 @@
-package ir.primefaces.showcase.view.input;
+package org.primefaces.showcase.view.input;
 
-import ir.primefaces.showcase.lb.Theme;
-import ir.primefaces.showcase.service.ThemeService;
+import org.primefaces.showcase.domain.Theme;
+import org.primefaces.showcase.service.ThemeService;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.RequestScoped;
@@ -11,18 +11,17 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by ashouri on 7/4/2015.
+ * Created by ashouri on 7/5/2015.
  */
-
 @Named
 @RequestScoped
-public class SelectOneView implements Serializable {
+public class SelectOneView implements Serializable{
 
     private String option;
     private Theme theme;
     private List<Theme> themes;
 
-
+    @Inject
     private ThemeService service;
 
     @PostConstruct
@@ -53,5 +52,4 @@ public class SelectOneView implements Serializable {
     public void setService(ThemeService service) {
         this.service = service;
     }
-
 }

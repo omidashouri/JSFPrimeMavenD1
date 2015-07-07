@@ -1,7 +1,4 @@
-package ir.primefaces.showcase.convert;
-
-import ir.primefaces.showcase.lb.Theme;
-import ir.primefaces.showcase.service.ThemeService;
+package org.primefaces.showcase.convert;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -10,13 +7,13 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
+import org.primefaces.showcase.domain.Theme;
+import org.primefaces.showcase.service.ThemeService;
+
 /**
- * Created by ashouri on 7/4/2015.
+ * Created by ashouri on 7/5/2015.
  */
-
-
-
-@FacesConverter
+@FacesConverter(value = "themeConverter")
 public class ThemeConverter implements Converter {
     public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
         if(value != null && value.trim().length() > 0) {
