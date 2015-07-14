@@ -1,7 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+        xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition template="/WEB-INF/templates/simple.xhtml">
 
@@ -16,7 +17,25 @@
                 <br/>
                 <h:button value="ListBox Page" outcome="pages/listbox" />
             </h:panelGrid>
-            <h:form>
+            <h:panelGrid columns="1">
+                <table border="1">
+                    <c:forEach items="#{header}" var="item">
+                        <tr>
+                            <td>#{item.key}</td>
+                            <td>#{item.value}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+<!--                <p:dataTable value="" var="params">
+                    <p:column headerText="ID">
+                        <h:outputLabel value=""/>
+                    </p:column>
+                    <p:column headerText="Value">
+                        <h:outputText value=""/>
+                    </p:column>
+                </p:dataTable>-->
+            </h:panelGrid>
+            <h:form id="form1">
                 <h:panelGrid id="grid" columns="3">
                     <p:outputLabel title="#{bundle['user.name']}" for="@next"/>
                     <p:inputText id="userName" value="#{user.name}" required="true" requiredMessage="#{bundle['user.name.validation']}"/>
