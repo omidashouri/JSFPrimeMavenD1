@@ -26,14 +26,22 @@
                         </tr>
                     </c:forEach>
                 </table>
-<!--                <p:dataTable value="" var="params">
-                    <p:column headerText="ID">
-                        <h:outputLabel value=""/>
+                <p:dataTable value="#{user.headerList}" var="hl">
+                    <p:column headerText="Key">
+                        <h:outputLabel value="#{hl.hKey}"/>
                     </p:column>
                     <p:column headerText="Value">
-                        <h:outputText value=""/>
+                        <h:outputText value="#{hl.hValue}"/>
                     </p:column>
-                </p:dataTable>-->
+                </p:dataTable>
+                <p:dataTable value="#{user.listMap}" var="lM">
+                    <p:column headerText="Key">
+                        <h:outputLabel value="#{lM.key}"/>
+                    </p:column>
+                    <p:column headerText="Value">
+                        <h:outputText value="#{lM.value}"/>
+                    </p:column>
+                </p:dataTable>
             </h:panelGrid>
             <h:form id="form1">
                 <h:panelGrid id="grid" columns="3">
